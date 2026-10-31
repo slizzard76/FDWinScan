@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "G:\\Job\\FD\\FDWinScan\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\services\\airecognizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\services\\airecognizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\controllers\\scancontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\controllers\\scancontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,24 +15,16 @@
       "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\models\\airesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\services\\iairecognizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\services\\iairecognizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\services\\airecognizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\services\\airecognizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\configuration\\aisettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\configuration\\aisettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0B70705-719B-C36A-F0B6-7896FBE6298F}|FDWinScan\\FDWinScan.csproj|g:\\job\\fd\\fdwinscan\\fdwinscan\\viewmodels\\scanviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0B70705-719B-C36A-F0B6-7896FBE6298F}|FDWinScan\\FDWinScan.csproj|solutionrelative:fdwinscan\\viewmodels\\scanviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|solutionrelative:fdbackscan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D9952C5C-F835-DA2C-30D7-5A0C1BE80909}|FDBackScan\\FDBackScan.csproj|g:\\job\\fd\\fdwinscan\\fdbackscan\\fdbackscan.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -42,99 +38,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 16,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AiResult.cs",
-              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Models\\AiResult.cs",
-              "RelativeDocumentMoniker": "FDBackScan\\Models\\AiResult.cs",
-              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Models\\AiResult.cs*",
-              "RelativeToolTip": "FDBackScan\\Models\\AiResult.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T15:11:16.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ScanController .cs",
-              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Controllers\\ScanController .cs",
-              "RelativeDocumentMoniker": "FDBackScan\\Controllers\\ScanController .cs",
-              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Controllers\\ScanController .cs*",
-              "RelativeToolTip": "FDBackScan\\Controllers\\ScanController .cs*",
-              "ViewState": "AgIAAAwBAAAAAAAAAAAgwJsBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T15:05:52.853Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AiRecognizer.cs",
-              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Services\\AiRecognizer.cs",
-              "RelativeDocumentMoniker": "FDBackScan\\Services\\AiRecognizer.cs",
-              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Services\\AiRecognizer.cs*",
-              "RelativeToolTip": "FDBackScan\\Services\\AiRecognizer.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T15:02:44.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IAiRecognizer.cs",
-              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Services\\IAiRecognizer.cs",
-              "RelativeDocumentMoniker": "FDBackScan\\Services\\IAiRecognizer.cs",
-              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Services\\IAiRecognizer.cs*",
-              "RelativeToolTip": "FDBackScan\\Services\\IAiRecognizer.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T15:01:48.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Program.cs",
-              "RelativeDocumentMoniker": "FDBackScan\\Program.cs",
-              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Program.cs*",
-              "RelativeToolTip": "FDBackScan\\Program.cs*",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAAAEkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T14:58:16.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AiSettings.cs",
-              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Configuration\\AiSettings.cs",
-              "RelativeDocumentMoniker": "FDBackScan\\Configuration\\AiSettings.cs",
-              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Configuration\\AiSettings.cs",
-              "RelativeToolTip": "FDBackScan\\Configuration\\AiSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-31T14:53:23.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FDBackScan",
-              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\FDBackScan.csproj",
-              "RelativeDocumentMoniker": "FDBackScan\\FDBackScan.csproj",
-              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\FDBackScan.csproj",
-              "RelativeToolTip": "FDBackScan\\FDBackScan.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-10-31T14:52:14.462Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -201,15 +106,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "AiRecognizer.cs",
+              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Services\\AiRecognizer.cs",
+              "RelativeDocumentMoniker": "FDBackScan\\Services\\AiRecognizer.cs",
+              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Services\\AiRecognizer.cs",
+              "RelativeToolTip": "FDBackScan\\Services\\AiRecognizer.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAowC8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T15:20:23.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ScanController .cs",
+              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Controllers\\ScanController .cs",
+              "RelativeDocumentMoniker": "FDBackScan\\Controllers\\ScanController .cs",
+              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Controllers\\ScanController .cs",
+              "RelativeToolTip": "FDBackScan\\Controllers\\ScanController .cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAuwFEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T15:18:37.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ScanViewModel.cs",
+              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDWinScan\\ViewModels\\ScanViewModel.cs",
+              "RelativeDocumentMoniker": "FDWinScan\\ViewModels\\ScanViewModel.cs",
+              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDWinScan\\ViewModels\\ScanViewModel.cs",
+              "RelativeToolTip": "FDWinScan\\ViewModels\\ScanViewModel.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAowKsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T15:18:13.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\appsettings.json",
               "RelativeDocumentMoniker": "FDBackScan\\appsettings.json",
               "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\appsettings.json",
               "RelativeToolTip": "FDBackScan\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-31T14:38:02.223Z",
+              "WhenOpened": "2026-10-31T15:16:50.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AiResult.cs",
+              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Models\\AiResult.cs",
+              "RelativeDocumentMoniker": "FDBackScan\\Models\\AiResult.cs",
+              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Models\\AiResult.cs",
+              "RelativeToolTip": "FDBackScan\\Models\\AiResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T15:11:16.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Program.cs",
+              "RelativeDocumentMoniker": "FDBackScan\\Program.cs",
+              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\Program.cs",
+              "RelativeToolTip": "FDBackScan\\Program.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAqwFAAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-31T14:58:16.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FDBackScan",
+              "DocumentMoniker": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\FDBackScan.csproj",
+              "RelativeDocumentMoniker": "FDBackScan\\FDBackScan.csproj",
+              "ToolTip": "G:\\Job\\FD\\FDWinScan\\FDBackScan\\FDBackScan.csproj",
+              "RelativeToolTip": "FDBackScan\\FDBackScan.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-10-31T14:52:14.462Z",
               "EditorCaption": ""
             }
           ]

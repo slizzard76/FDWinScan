@@ -53,7 +53,10 @@ public class AiRecognizer : IAiRecognizer
 
         if (string.IsNullOrWhiteSpace(content))
             throw new InvalidOperationException("Ollama вернула пустой ответ.");
-
+        var message = JsonSerializer.Deserialize<Message>(content, new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        }) ?? throw new InvalidOperationException("Не удалось разобрать ответ Ollama.");
         return JsonSerializer.Deserialize<AiResult>(content, new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true
@@ -68,7 +71,7 @@ public class AiRecognizer : IAiRecognizer
 
         var requestBody = new
         {
-            model = _settings.OpenAi.Model,
+            model = _settings.OpenAI.Model,
             messages = new object[]
             {
                 new
@@ -86,7 +89,7 @@ public class AiRecognizer : IAiRecognizer
                 }
             },
             response_format = new { type = "json_object" },
-            temperature = _settings.OpenAi.Temperature
+            temperature = _settings.OpenAI.Temperature
         };
 
         var response = await client.PostAsync("chat/completions",

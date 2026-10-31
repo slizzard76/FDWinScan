@@ -8,7 +8,7 @@
         public string Provider { get; set; } = "Ollama";
 
         public OllamaSettings Ollama { get; set; } = new();
-        public OpenAiSettings OpenAi { get; set; } = new();
+        public OpenAiSettings OpenAI { get; set; } = new();
         public AzureDocIntelligenceSettings AzureDocIntelligence { get; set; } = new();
     }
 

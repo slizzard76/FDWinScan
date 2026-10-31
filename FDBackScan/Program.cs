@@ -84,10 +84,10 @@ builder.Services.AddHttpClient("Ollama", (sp, client) =>
 builder.Services.AddHttpClient("OpenAi", (sp, client) =>
 {
     var ai = sp.GetRequiredService<IOptions<AiSettings>>().Value;
-    client.BaseAddress = new Uri(ai.OpenAi.BaseUrl);
-    client.Timeout = TimeSpan.FromSeconds(ai.OpenAi.TimeoutSeconds);
+    client.BaseAddress = new Uri(ai.OpenAI.BaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(ai.OpenAI.TimeoutSeconds);
     client.DefaultRequestHeaders.Authorization =
-        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ai.OpenAi.ApiKey);
+        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ai.OpenAI.ApiKey);
 });
 
 builder.Services.AddHttpClient("AzureDocIntelligence", (sp, client) =>
