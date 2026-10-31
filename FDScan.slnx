@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FDBackScan/FDBackScan.csproj" />
+  <Project Path="FDWinScan/FDWinScan.csproj" />
+</Solution>

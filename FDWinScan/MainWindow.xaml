@@ -1,0 +1,209 @@
+﻿<Window x:Class="FDWinScan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FDWinScan.ViewModels"
+        mc:Ignorable="d"
+        Title="AI Scanner — распознавание документов"
+        Height="800" Width="1200"
+        MinHeight="600" MinWidth="900"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ScanViewModel/>
+    </Window.DataContext>
+
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Панель кнопок -->
+            <RowDefinition Height="*"/>
+            <!-- Превью + поля -->
+            <RowDefinition Height="*"/>
+            <!-- Табличные данные -->
+            <RowDefinition Height="Auto"/>
+            <!-- Статус -->
+        </Grid.RowDefinitions>
+
+        <!-- ============ Панель кнопок ============ -->
+        <!-- Панель кнопок + промпт -->
+        <Border Grid.Row="0"
+        Background="#F5F5F5"
+        BorderBrush="#DDDDDD"
+        BorderThickness="1"
+        CornerRadius="4"
+        Padding="8"
+        Margin="0,0,0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Кнопки -->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,8">
+                    <Button Content="📠 Сканировать"
+                    Command="{Binding ScanDocumentCommand}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}"
+                    Padding="12,6" Margin="0,0,8,0" FontSize="13"/>
+
+                    <Button Content="📂 Загрузить файл"
+                    Command="{Binding LoadFromFileCommand}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}"
+                    Padding="12,6" Margin="0,0,16,0" FontSize="13"/>
+
+                    <Button Content="🧠 Распознать"
+                    Command="{Binding RecognizeCommand}"
+                    Padding="12,6" Margin="0,0,8,0" FontSize="13"
+                    FontWeight="SemiBold"/>
+
+                    <Button Content="💾 Скачать Excel"
+                    Command="{Binding DownloadExcelCommand}"
+                    Padding="12,6" FontSize="13"/>
+
+                    <Button Content="⚙ Настройки"
+                    Command="{Binding OpenSettingsCommand}"
+                    IsEnabled="{Binding IsBusy, Converter={StaticResource InverseBool}}"
+                    Padding="12,6" Margin="0,0,8,0" FontSize="13"/>
+                </StackPanel>
+
+                <!-- Промпт -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0"
+                       Text="Промпт для ИИ:"
+                       VerticalAlignment="Top"
+                       Margin="0,6,8,0"
+                       Foreground="#333333"/>
+
+                    <TextBox Grid.Column="1"
+                     Text="{Binding Prompt, UpdateSourceTrigger=PropertyChanged}"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     MinHeight="60"
+                     MaxHeight="140"
+                     VerticalScrollBarVisibility="Auto"
+                     Padding="4"
+                     FontFamily="Consolas"
+                     FontSize="12"/>
+
+                    <Button Grid.Column="2"
+                    Content="↺ Сброс"
+                    Command="{Binding ResetPromptCommand}"
+                    Padding="8,4"
+                    Margin="8,0,0,0"
+                    VerticalAlignment="Top"
+                    ToolTip="Вернуть промпт по умолчанию"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- ============ Превью + поля ============ -->
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Превью документа -->
+            <GroupBox Grid.Column="0" Header="Отсканированный документ" Margin="0,0,6,0">
+                <Border Background="#FAFAFA" BorderBrush="#CCCCCC" BorderThickness="1">
+                    <Grid>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                                      VerticalScrollBarVisibility="Auto"
+                                      Padding="4">
+                            <Image Source="{Binding PreviewImage}"
+                                   Stretch="Uniform"
+                                   StretchDirection="DownOnly"/>
+                        </ScrollViewer>
+
+                        <!-- Заглушка, если превью нет -->
+                        <TextBlock Text="Документ не выбран"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="#999999"
+                                   FontSize="14"
+                                   IsHitTestVisible="False">
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding PreviewImage}" Value="{x:Null}">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </Border>
+            </GroupBox>
+
+            <!-- Распознанные поля -->
+            <GroupBox Grid.Column="1" Header="Распознанные поля" Margin="6,0,0,0">
+                <DataGrid ItemsSource="{Binding Fields}"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          GridLinesVisibility="Horizontal"
+                          HeadersVisibility="Column"
+                          AlternatingRowBackground="#F9F9F9"
+                          RowHeight="24"
+                          FontSize="12">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Поле"
+                                            Binding="{Binding Name}"
+                                            Width="2*"/>
+                        <DataGridTextColumn Header="Значение"
+                                            Binding="{Binding Value}"
+                                            Width="3*"/>
+                        <DataGridTextColumn Header="Уверенность"
+                                            Binding="{Binding Confidence, StringFormat=P1}"
+                                            Width="Auto"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+        </Grid>
+
+        <!-- ============ Табличные данные ============ -->
+        <GroupBox Grid.Row="2" Header="Табличные данные (позиции документа)">
+            <DataGrid ItemsSource="{Binding RowsView}"
+                      AutoGenerateColumns="True"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      GridLinesVisibility="All"
+                      HeadersVisibility="Column"
+                      AlternatingRowBackground="#F9F9F9"
+                      RowHeight="24"
+                      FontSize="12"
+                      ColumnWidth="SizeToHeader"/>
+        </GroupBox>
+
+        <!-- ============ Статус ============ -->
+        <Grid Grid.Row="3" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <ProgressBar Grid.Row="0"
+                         IsIndeterminate="True"
+                         Height="4"
+                         Margin="0,0,0,4"
+                         Visibility="{Binding IsBusy, Converter={StaticResource BoolToVisibility}}"/>
+
+            <TextBlock Grid.Row="1"
+                       Text="{Binding StatusMessage}"
+                       TextWrapping="Wrap"
+                       Foreground="#555555"
+                       FontSize="11"/>
+        </Grid>
+    </Grid>
+</Window>

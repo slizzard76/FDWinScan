@@ -1,0 +1,121 @@
+﻿<Window x:Class="FDWinScan.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Настройки"
+        Height="520" Width="680"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TabControl Grid.Row="0">
+            <!-- ============ Вкладка «Подключение» ============ -->
+            <TabItem Header="Подключение">
+                <Grid Margin="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Text="Адрес бэкенда (Base URL):"
+                               FontWeight="SemiBold"/>
+                    <TextBox Grid.Row="1"
+                             x:Name="BaseUrlBox"
+                             Margin="0,4,0,12"
+                             Padding="4"
+                             FontFamily="Consolas"/>
+
+                    <TextBlock Grid.Row="2"
+                               Text="Таймаут запроса (секунды):"
+                               FontWeight="SemiBold"/>
+                    <TextBox Grid.Row="3"
+                             x:Name="TimeoutBox"
+                             Margin="0,4,0,0"
+                             Padding="4"
+                             Width="120"
+                             HorizontalAlignment="Left"/>
+
+                    <Button Grid.Row="4"
+                            Content="Проверить подключение"
+                            Click="OnTestClick"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            Padding="10,5"
+                            Margin="0,12,0,0"/>
+                </Grid>
+            </TabItem>
+
+            <!-- ============ Вкладка «Распознавание» ============ -->
+            <TabItem Header="Распознавание">
+                <Grid Margin="12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,6">
+                        <TextBlock Text="Промпт для ИИ:"
+                       FontWeight="SemiBold"
+                       VerticalAlignment="Center"/>
+                        <Button Content="↺ Сбросить к значению по умолчанию"
+                    Click="OnResetPromptClick"
+                    Margin="16,0,0,0"
+                    Padding="8,3"/>
+                    </StackPanel>
+
+                    <TextBox Grid.Row="1"
+                 x:Name="PromptBox"
+                 AcceptsReturn="True"
+                 TextWrapping="Wrap"
+                 VerticalScrollBarVisibility="Auto"
+                 FontFamily="Consolas"
+                 FontSize="12"
+                 Padding="6"/>
+
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,8,0,0">
+                        <Button Content="🧪 Проверить промпт"
+                    Click="OnTestPromptClick"
+                    x:Name="TestPromptButton"
+                    Padding="10,5"
+                    Margin="0,0,12,0"/>
+                        <TextBlock x:Name="TestResultText"
+                       VerticalAlignment="Center"
+                       FontSize="12"
+                       Foreground="#333333"
+                       TextWrapping="Wrap"/>
+                    </StackPanel>
+                    <TextBlock Grid.Row="3"
+                   Margin="0,6,0,0"
+                   Foreground="#666666"
+                   FontSize="11"
+                   TextWrapping="Wrap"
+                   Text="Промпт передаётся на сервер вместе с изображением. Если оставить поле пустым — сервер использует свой промпт по умолчанию."/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <!-- Кнопки -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,12,0,0">
+            <Button Content="Сохранить"
+                    Click="OnSaveClick"
+                    IsDefault="True"
+                    Padding="12,5"
+                    Margin="0,0,8,0"/>
+            <Button Content="Отмена"
+                    IsCancel="True"
+                    Padding="12,5"/>
+        </StackPanel>
+    </Grid>
+</Window>
