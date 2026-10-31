@@ -2,7 +2,6 @@ using ClosedXML.Excel;
 using FDBackScan.Services;
 using Microsoft.AspNetCore.Mvc;
 using FDBackScan.Models;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 
@@ -24,14 +23,13 @@ public class ScanController : ControllerBase
     private readonly IScanStore _store;
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ILogger<ScanController> _logger;
+    private readonly IAiRecognizer _recognizer;
+    
 
-    public ScanController(
-        IScanStore store,
-        IHttpClientFactory httpClientFactory,
-        ILogger<ScanController> logger)
+    public ScanController(IScanStore store, IAiRecognizer recognizer, ILogger<ScanController> logger)
     {
         _store = store;
-        _httpClientFactory = httpClientFactory;
+        _recognizer = recognizer;
         _logger = logger;
     }
 
@@ -83,7 +81,7 @@ public class ScanController : ControllerBase
         AiResult recognized;
         try
         {
-            recognized = await CallAiServiceAsync(imageBytes, file.ContentType, prompt);
+            recognized = await _recognizer.RecognizeAsync(imageBytes, file.ContentType, prompt);
         }
         catch (Exception ex)
         {
@@ -269,7 +267,7 @@ public class ScanController : ControllerBase
         var sw = System.Diagnostics.Stopwatch.StartNew();
         try
         {
-            recognized = await CallAiServiceAsync(imageBytes, file.ContentType, prompt);
+            recognized = await _recognizer.RecognizeAsync(imageBytes, file.ContentType, prompt);
         }
         catch (Exception ex)
         {
@@ -509,10 +507,4 @@ public class ScanController : ControllerBase
     */
     #endregion
 
-    /// <summary>Внутренняя модель ответа ИИ.</summary>
-    private class AiResult
-    {
-        public List<RecognizedField> Fields { get; set; } = new();
-        public List<RecognizedRow> Rows { get; set; } = new();
-    }
 }

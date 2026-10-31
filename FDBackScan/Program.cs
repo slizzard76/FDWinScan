@@ -1,8 +1,16 @@
+using FDBackScan.Configuration;
 using FDBackScan.Services;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi;
 using System.Reflection;
 
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<AiSettings>(
+    builder.Configuration.GetSection(AiSettings.SectionName));
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -62,11 +70,31 @@ builder.Services.AddSwaggerGen(options =>
 
 // DI для сканера (из предыдущего шага)
 builder.Services.AddSingleton<IScanStore, InMemoryScanStore>();
+builder.Services.AddScoped<IAiRecognizer, AiRecognizer>();
+
 builder.Services.AddHttpClient();
-builder.Services.AddHttpClient("Ollama", client =>
+// Именованные HttpClient для каждого провайдера
+builder.Services.AddHttpClient("Ollama", (sp, client) =>
 {
-    client.BaseAddress = new Uri("http://localhost:11434/");
-    client.Timeout = TimeSpan.FromMinutes(5); // vision-модели могут отвечать долго
+    var ai = sp.GetRequiredService<IOptions<AiSettings>>().Value;
+    client.BaseAddress = new Uri(ai.Ollama.BaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(ai.Ollama.TimeoutSeconds);
+});
+
+builder.Services.AddHttpClient("OpenAi", (sp, client) =>
+{
+    var ai = sp.GetRequiredService<IOptions<AiSettings>>().Value;
+    client.BaseAddress = new Uri(ai.OpenAi.BaseUrl);
+    client.Timeout = TimeSpan.FromSeconds(ai.OpenAi.TimeoutSeconds);
+    client.DefaultRequestHeaders.Authorization =
+        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", ai.OpenAi.ApiKey);
+});
+
+builder.Services.AddHttpClient("AzureDocIntelligence", (sp, client) =>
+{
+    var ai = sp.GetRequiredService<IOptions<AiSettings>>().Value;
+    client.BaseAddress = new Uri(ai.AzureDocIntelligence.Endpoint);
+    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", ai.AzureDocIntelligence.ApiKey);
 });
 var app = builder.Build();
 
